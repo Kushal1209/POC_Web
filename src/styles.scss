@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@media screen and (min-width: 1441px) {
+    .container-xxl {
+      max-width: 100% !important;
+    }
+  }
+  
+  #layout-navbar {
+    border-bottom: 1px solid #e9dede;
+    //box-shadow: 0px -8px 1.375rem -0.75rem rgba(161, 172, 184, .15);
+  }
+  
+  .none-shadow {
+    box-shadow: none !important;
+  }
+  
+  .container-xxl.flex-grow-1.container-p-y{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }

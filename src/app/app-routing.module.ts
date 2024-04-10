@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes = [
   {
@@ -12,8 +14,15 @@ const routes: Routes = [
   },
   {
     path: 'auth',
+    component: AuthLayoutComponent,
     loadChildren: () =>
       import('./modules/auth/auth.module').then((mod) => mod.AuthModule),
+  },
+  {
+    path: 'dashboard',
+    component: AdminLayoutComponent,
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((mod) => mod.AdminModule),
   },
 ];
 
