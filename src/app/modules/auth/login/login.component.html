@@ -19,21 +19,24 @@
                 </div>
                 <form
                   class="row g-3 needs-validation"
+                  [formGroup]="login"
+                  (ngSubmit)="onSubmit()"
                 >
                   <div class="col-12">
                     <label for="yourUsername" class="form-label">Email</label>
                     <div class="input-group has-validation">
                       <input
-                        type="text"
-                        name="username"
+                        type="email"
+                        name="email"
                         class="form-control"
                         id="yourUsername"
-                        formControlName="username"
-                        placeholder="Please enter your Email"
+                        formControlName="email"
+                        placeholder="Please enter your email"
+                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors}"
                       />
-                      <!-- <div class="invalid-feedback" *ngIf="submitted && f['username'].errors">
-                          <div *ngIf="f['username'].errors['required']"> Username is required!</div>
-                      </div> -->
+                      <div class="invalid-feedback" *ngIf="submitted && f['email'].errors">
+                          <div *ngIf="f['email'].errors['required']"> Email is required!</div>
+                      </div>
                     </div>
                   </div>
   
@@ -45,11 +48,12 @@
                       class="form-control"
                       id="yourPassword"
                       formControlName="password"
-                      placeholder="Please enter your Password"
+                      placeholder="Please enter your password"
+                      [ngClass]="{ 'is-invalid': submitted && f['password'].errors}"
                     />
-                    <!-- <div class="invalid-feedback" *ngIf="submitted && f['password'].errors">
+                    <div class="invalid-feedback" *ngIf="submitted && f['password'].errors">
                       <div *ngIf="f['password'].errors['required']"> Password is required!</div>
-                    </div> -->
+                    </div>
                   </div>
                   <div class="col-12">
                     <button class="btn btn-primary w-100" type="submit">

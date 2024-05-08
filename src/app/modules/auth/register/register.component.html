@@ -16,21 +16,24 @@
             </div>
   
             <form
-              class="row g-3 needs-validation"
+            [formGroup]="register"
+            (ngSubmit)="onSubmit()"
+            class="row g-3 needs-validation"
             >
               <div class="col-12">
-                <label for="name" class="form-label">Your Name</label>
+                <label for="username" class="form-label">Your Username</label>
                 <input
                   type="text"
                   name="name"
                   class="form-control"
-                  formControlName="name"
-                  id="name"
-                  placeholder="Please enter your Name"
+                  formControlName="username"
+                  id="username"
+                  placeholder="Please enter your username"
+                  [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
                 />
-                <!-- <div class="invalid-feedback" *ngIf="submitted && f['name'].errors">
-                  <div *ngIf="f['name'].errors['required']"> Name is required!</div>
-                </div> -->
+                <div class="invalid-feedback" *ngIf="submitted && f['username'].errors">
+                  <div *ngIf="f['username'].errors['required']"> Username is required!</div>
+                </div>
               </div>
   
               <div class="col-12">
@@ -42,27 +45,11 @@
                   formControlName="email"
                   id="email"
                   placeholder="Please enter your Email"
+                  [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
                 />
-                <!-- <div class="invalid-feedback" *ngIf="submitted && f['email'].errors">
+                <div class="invalid-feedback" *ngIf="submitted && f['email'].errors">
                   <div *ngIf="f['email'].errors['required']"> Email is required!</div>
                   <div *ngIf="f['email'].errors['email']"> Email should be in a proper format!</div>
-                </div> -->
-              </div>
-  
-              <div class="col-12">
-                <label for="username" class="form-label">Username</label>
-                <div class="input-group has-validation">
-                  <input
-                    type="text"
-                    name="username"
-                    class="form-control"
-                    formControlName="username"
-                    id="username"
-                    placeholder="Please enter your Username"
-                  />
-                  <!-- <div class="invalid-feedback" *ngIf="submitted && f['username'].errors">
-                    <div *ngIf="f['username'].errors['required']"> Username is required!</div>
-                  </div> -->
                 </div>
               </div>
   
@@ -75,11 +62,12 @@
                   formControlName="password"
                   id="password"
                   placeholder="Please enter your Password"
+                  [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
                 />
-                <!-- <div class="invalid-feedback" *ngIf="submitted && f['password'].errors">
+                <div class="invalid-feedback" *ngIf="submitted && f['password'].errors">
                   <div *ngIf="f['password'].errors['required']"> Password is required!</div>
                   <div *ngIf="f['password'].errors['minlength']"> Password length must be alteast 6 characters.</div>
-                </div> -->
+                </div>
               </div>
   
               <div class="col-12">
@@ -91,18 +79,19 @@
                     value=""
                     id="tnc"
                     formControlName="tnc"
+                    [ngClass]="{ 'is-invalid': submitted && f['tnc'].errors }"
                   />
                   <label class="form-check-label" for="tnc"
                     >I agree and accept the
                     <a href="#">terms and conditions</a></label
                   >
-                  <!-- <div class="invalid-feedback" *ngIf="submitted && f['tnc'].errors">
+                  <div class="invalid-feedback" *ngIf="submitted && f['tnc'].errors">
                     <div *ngIf="f['tnc'].errors['required']"> You must agree before registration!</div>
-                  </div> -->
+                  </div>
                 </div>
               </div>
               <div class="col-12">
-                <button class="btn btn-primary w-100" type="submit">
+                <button class="btn btn-primary w-100" type="submit" (click)="newRegister()">
                   Create Account
                 </button>
               </div>

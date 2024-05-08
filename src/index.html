@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYLE HTML>
 <html  lang="en"
 class="light-style layout-menu-fixed"
 dir="ltr"
@@ -20,9 +20,8 @@ data-template="vertical-menu-template">
    <!-- Google Fonts -->
    <link rel="preconnect" href="https://fonts.googleapis.com" />
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
  
    <!-- CSS File -->
    <link href="assets/css/core.css" rel="stylesheet">
@@ -32,13 +31,102 @@ data-template="vertical-menu-template">
 <body>
   <app-root></app-root>
 
-  <!-- JS File -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="src/assets/js/config.js"></script>
-  <script src="src/assets/js/helpers.js"></script>
-  <script src="src/assets/js/apexcharts.js"></script>
-  <script src="src/assets/js/charts-apex.js"></script>
-  <script src="src/assets/js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function toggleDropdown() {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.style.display = dropdownMenu.style.display === "none" ? "block" : "none";
+    }
+
+    document.addEventListener("click", function(event) {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        var dropdownButton = document.getElementById("dropdownMenuButton");
+        if (!dropdownMenu.contains(event.target) && event.target !== dropdownButton) {
+            dropdownMenu.style.display = "none";
+        }
+    });
+
+    function toggleAccordion(accordionId) {
+        var accordionContent = document.getElementById(accordionId + "Content");
+        if (accordionContent.style.display === "none") {
+            accordionContent.style.display = "table-row";
+        } else {
+            accordionContent.style.display = "none";
+        }
+    }
+
+    function toggleDropdown(element) {
+        var dropdownMenu = element.nextElementSibling;
+        if (dropdownMenu.style.display === "none") {
+            dropdownMenu.style.display = "block";
+        } else {
+            dropdownMenu.style.display = "none";
+        }
+    }
+
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+            data: [{
+                type: "doughnut",
+                startAngle: 25,
+                //innerRadius: 60,
+                indexLabelFontSize: 17,
+                dataPoints: [
+                    { y: 90, label: "Inbox" },
+                    { y: 10, label: "Archives" }
+                ]
+            }]
+        });
+        chart.render();
+
+        var chart2 = new CanvasJS.Chart("chartContainer2", {
+        animationEnabled: true,
+            data: [{
+                type: "doughnut",
+                startAngle: 25,
+                //innerRadius: 60,
+                indexLabelFontSize: 17,
+                dataPoints: [
+                    { y: 90, label: "Inbox" },
+                    { y: 10, label: "Archives" }
+                ]
+            }]
+        });
+        chart2.render();
+
+        var chart3 = new CanvasJS.Chart("chartContainer3", {
+        animationEnabled: true,
+            data: [{
+                type: "doughnut",
+                startAngle: 25,
+                //innerRadius: 60,
+                dataPoints: [
+                    { y: 70, label: "Inbox" },
+                    { y: 20, label: "Archives" }
+                ]
+            }]
+        });
+        chart3.render();
+
+        var chart4 = new CanvasJS.Chart("chartContainer4", {
+        animationEnabled: true,
+            data: [{
+                type: "doughnut",
+                startAngle: 25,
+                //innerRadius: 60,
+                indexLabelFontSize: 17,
+                dataPoints: [
+                    { y: 55, label: "Inbox" },
+                    { y: 50, label: "Archives" }
+                ]
+            }]
+        });
+        chart4.render();
+    }
+</script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
 </body>
 </html>

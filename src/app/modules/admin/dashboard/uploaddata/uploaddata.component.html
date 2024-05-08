@@ -1,0 +1,27 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUploadData"
+  aria-labelledby="offcanvasAddQuickCarerLabel" aria-modal="true" role="dialog">
+  <div class="offcanvas-header sub-drawer-head">
+    <h5 id="offcanvasAddQuickCarerLabel" class="offcanvas-title">Upload Data</h5>
+    <button type="button" (click)="onClose()" #closeModal class="btn-close text-reset" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body mx-0 flex-grow-0" style="text-align: left;">
+    <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" [formGroup]="uploadData"
+      (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label" for="uploadFile">Upload File</label>
+        <input type="file" [accept]="allowedFormats" accept=".xlsx" #uploadRequestFile class="form-control" formControlName="uploadFile"
+          [ngClass]="(submitted && uploadData.controls['uploadFile'].errors) ? 'is-invalid' : ''">
+        <div *ngIf="submitted && uploadData.controls['uploadFile'].errors">
+          <div *ngIf="uploadData.controls['uploadFile'].errors['required']" class="invalid-feedback d-block">
+            Please upload a file.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
+      <button type="reset" class="btn btn-label-secondary" (click)="onClose()"
+        data-bs-dismiss="offcanvas">Cancel</button>
+      <input type="hidden">
+    </form>
+  </div>
+</div>

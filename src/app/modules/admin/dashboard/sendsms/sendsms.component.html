@@ -1,0 +1,45 @@
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSendEmail" aria-labelledby="offcanvasSendEmailLabel"
+  aria-modal="true" role="dialog">
+  <div class="offcanvas-header sub-drawer-head">
+    <h5 id="offcanvasSendEmailLabel" class="offcanvas-title">Send SMS</h5>
+    <button type="button" (click)="onClose()" #closeModal class="btn-close text-reset" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+  </div>
+    <div class="offcanvas-body mx-0 flex-grow-0" style="text-align: left;">
+      <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" [formGroup]="sendSms"
+        (ngSubmit)="onSubmit()">
+
+        <div class="mb-3 fv-plugins-icon-container">
+          <input type="text" class="form-control" id="title" placeholder="Campaign Name" name="name"
+             formControlName="name"
+            [ngClass]="(submitted && sendSms.controls['name'].errors) ? 'is-invalid' : ''">
+  
+          <div *ngIf="submitted && sendSms.controls['name'].errors">
+            <div *ngIf="sendSms.controls['name'].errors['required']" class="invalid-feedback d-block">
+              Please enter email.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 fv-plugins-icon-container">
+            <textarea type="text" class="form-control" id="description" placeholder="Write text here" name="message"
+              formControlName="message"
+              [ngClass]="(submitted && sendSms.controls['message'].errors) ? 'is-invalid' : ''"></textarea>
+    
+            <div *ngIf="submitted && sendSms.controls['message'].errors">
+              <div *ngIf="sendSms.controls['message'].errors['required']" class="invalid-feedback d-block">
+                Please enter Message.
+              </div>
+            </div>
+          </div>
+        <br>
+        <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
+        <button type="reset" class="btn btn-label-secondary" (click)="onClose()"
+          data-bs-dismiss="offcanvas">Cancel</button>
+        <input type="hidden">
+      </form>
+    </div>
+  </div>
+  <!-- Add User Drawer End -->
+

@@ -10,7 +10,8 @@
           class="col-md-12 col-xl-12"
           style="border-style: dashed; padding: 10px; border-radius: 10px"
         >
-          <div class="card" style="align-items: center">
+          <button class="card" style="width: 100%; align-items: center;"  data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasUploadData">
             <div class="card-body bg-1">
               <div class="card-title d-flex">
                 <div class="card-icon d-flex j-content">
@@ -26,14 +27,16 @@
                 </div>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
 
       <div class="row g-4 mb-4 mt-4">
         <div class="col-sm-6 col-xl-3">
-          <div class="card" style="height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(23, 181, 225);
-          border-radius: 20px 20px 20px 20px;">
+          <button class="card" style="width: 100%; height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(23, 181, 225);
+            border-radius: 20px 20px 20px 20px;" 
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasSendSMS">
             <div class="card-body bg-1">
               <div class="card-title align-content-center justify-content-between"  style="margin-top: 4rem;">
                 <div class="card-icon j-content">
@@ -41,69 +44,192 @@
                     <i class="bx bxs-message bx-sm"></i>
                   </span>
                   <h5 class="fw-semibold d-md-inline-block mb-1 mt-4 color">
-                    SMS integrated<span
+                    SMS integrated
+                    <span class="card-title d-md-block big-font color5"></span>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <button class="card" style="width: 100%; height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(197, 20, 150);
+            border-radius: 20px 20px 20px 20px;" 
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasSendEmail">
+            <div class="card-body bg-1">
+              <div class="card-title align-content-center justify-content-between" style="margin-top: 4rem;">
+                <div class="card-icon j-content">
+                  <span class="badge bg-label-primary rounded p-2">
+                    <i class="bx bx-envelope bx-sm"></i>
+                  </span>
+                  <h5 class="fw-semibold d-md-inline-block mb-1 mt-4 color">
+                    Email integrated<span
                       class="card-title d-md-block big-font color5"></span>
                   </h5>
                 </div>
               </div>
             </div>
-          </div>
+          </button>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <div class="card" style="height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(197, 20, 150);
-            border-radius: 20px 20px 20px 20px;">
-              <div class="card-body bg-1">
-                <div class="card-title align-content-center justify-content-between"  style="margin-top: 4rem;">
-                  <div class="card-icon j-content">
-                    <span class="badge bg-label-primary rounded p-2">
-                      <i class="bx bx-envelope bx-sm"></i>
-                    </span>
-                    <h5 class="fw-semibold d-md-inline-block mb-1 mt-4 color">
-                      Email integrated<span
-                        class="card-title d-md-block big-font color5"></span>
-                    </h5>
-                  </div>
+          <button class="card" style="width: 100%; height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(10, 102, 177);
+            border-radius: 20px 20px 20px 20px;" (click)="CustomerList()">
+            <div class="card-body bg-1">
+              <div class="card-title align-content-center justify-content-between" style="margin-top: 4rem;">
+                <div class="card-icon j-content">
+                  <span class="badge bg-label-primary rounded p-2">
+                    <i class="bx bx-user-circle bx-sm"></i>
+                  </span>
+                  <h5 class="fw-semibold d-md-inline-block mb-1 mt-4 color">
+                    Customer Profile<span
+                      class="card-title d-md-block big-font color5"></span>
+                  </h5>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card" style="height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(10, 102, 177);
-            border-radius: 20px 20px 20px 20px;">
-              <div class="card-body bg-1">
-                <div class="card-title align-content-center justify-content-between"  style="margin-top: 4rem;">
-                  <div class="card-icon j-content">
-                    <span class="badge bg-label-primary rounded p-2">
-                      <i class="bx bx-user-circle bx-sm"></i>
-                    </span>
-                    <h5 class="fw-semibold d-md-inline-block mb-1 mt-4 color">
-                      Customer Profile<span
-                        class="card-title d-md-block big-font color5"></span>
-                    </h5>
-                  </div>
+          </button>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <button class="card" style="width: 100%; height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(209, 152, 17);
+            border-radius: 20px 20px 20px 20px;" (click)="Marketing()">
+            <div class="card-body bg-1">
+              <div class="card-title align-content-center justify-content-between"  style="margin-top: 4rem;">
+                <div class="card-icon j-content">
+                  <span class="badge bg-label-primary rounded p-2">
+                    <i class="bx bx-grid-vertical bx-sm"></i>
+                  </span>
+                  <h5 class="fw-semibold d-md-inline-block mb-1 mt-4 color">
+                    Marketing analytics<span
+                      class="card-title d-md-block big-font color5"></span>
+                  </h5>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card" style="height: 275px; align-items: center; border-bottom: 0.6rem solid rgb(209, 152, 17);
-            border-radius: 20px 20px 20px 20px;">
-              <div class="card-body bg-1">
-                <div class="card-title align-content-center justify-content-between"  style="margin-top: 4rem;">
-                  <div class="card-icon j-content">
-                    <span class="badge bg-label-primary rounded p-2">
-                      <i class="bx bx-grid-vertical bx-sm"></i>
-                    </span>
-                    <h5 class="fw-semibold d-md-inline-block mb-1 mt-4 color">
-                      Marketing analytics<span
-                        class="card-title d-md-block big-font color5"></span>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </button>
+        </div>
       </div>
     </div>
+    <!-- / Content -->
+  <div class="content-backdrop fade"></div>
   </div>
 </div>
+
+<!-- Upload data Modal start -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUploadData" aria-labelledby="offcanvasUploadDataLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasUploadDataLabel">Import Data</h5>
+      <button type="button" class="btn-close text-reset" #scloseModal (click)="onCloseUploaddata()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body mx-0 flex-grow-0" style="text-align: left;">
+    <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" [formGroup]="uploadData"
+      (ngSubmit)="onSubmitUploaddata()">
+      <div class="mb-3">
+        <label class="form-label" for="uploadFile">Upload File</label>
+        <input type="file" [accept]="allowedFormats" accept=".xlsx" (change)="document($event)" class="form-control" formControlName="uploadFile"
+          [ngClass]="(submitted && uploadData.controls['uploadFile'].errors) ? 'is-invalid' : ''">
+        <div *ngIf="submitted && uploadData.controls['uploadFile'].errors">
+          <div *ngIf="uploadData.controls['uploadFile'].errors['required']" class="invalid-feedback d-block">
+            Please upload a file.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Upload</button>
+      <input type="hidden">
+    </form>
+  </div>
+</div>
+<!-- Upload data Modal End -->
+
+<!-- Send SMS Modal start -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSendSMS" aria-labelledby="offcanvasSendSMSLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasSendSMSLabel">Send SMS</h5>
+      <button type="button" class="btn-close text-reset" #dcloseModal (click)="onCloseSMS()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body mx-0 flex-grow-0" style="text-align: left;">
+    <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" [formGroup]="sendSms"
+      (ngSubmit)="onSubmitSMS()">
+      <div class="mb-3 fv-plugins-icon-container">
+        <input type="text" class="form-control" id="title" placeholder="Campaign Name" name="campaignname"
+            formControlName="campaignname"
+          [ngClass]="(submitted && sendSms.controls['campaignname'].errors) ? 'is-invalid' : ''">
+
+        <div *ngIf="submitted && sendSms.controls['campaignname'].errors">
+          <div *ngIf="sendSms.controls['campaignname'].errors['required']" class="invalid-feedback d-block">
+            Please enter Campaign name.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 fv-plugins-icon-container">
+          <textarea type="text" class="form-control" rows="17" id="description" placeholder="Write text here" name="message"
+            formControlName="message"
+            [ngClass]="(submitted && sendSms.controls['message'].errors) ? 'is-invalid' : ''"></textarea>
+  
+          <div *ngIf="submitted && sendSms.controls['message'].errors">
+            <div *ngIf="sendSms.controls['message'].errors['required']" class="invalid-feedback d-block">
+              Please enter Message.
+            </div>
+          </div>
+        </div>
+      <br>
+      <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Send</button>
+      <input type="hidden">
+    </form>
+  </div>
+</div>
+<!-- Send SMS Modal End -->
+
+<!-- Send Email Modal start -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSendEmail" aria-labelledby="offcanvasSendEmailLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasSendEmailLabel">Send Email</h5>
+      <button type="button" class="btn-close text-reset" #closeModal (click)="onCloseEmail()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body mx-0 flex-grow-0" style="text-align: left;">
+    <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" [formGroup]="sendEmail"
+      (ngSubmit)="onSubmitEmail()">
+
+      <div class="mb-3 fv-plugins-icon-container">
+        <input type="text" class="form-control" id="title" placeholder="Company Name" name="email"
+            formControlName="email"
+          [ngClass]="(submitted && sendEmail.controls['email'].errors) ? 'is-invalid' : ''">
+
+        <div *ngIf="submitted && sendEmail.controls['email'].errors">
+          <div *ngIf="sendEmail.controls['email'].errors['required']" class="invalid-feedback d-block">
+            Please enter Company Name.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 fv-plugins-icon-container">
+        <input type="text" class="form-control" id="description" placeholder="Subject" name="subject"
+          formControlName="subject"
+          [ngClass]="(submitted && sendEmail.controls['subject'].errors) ? 'is-invalid' : ''" />
+
+        <div *ngIf="submitted && sendEmail.controls['subject'].errors">
+          <div *ngIf="sendEmail.controls['subject'].errors['required']" class="invalid-feedback d-block">
+            Please enter Subject.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 fv-plugins-icon-container">
+          <textarea type="text" class="form-control" id="description" rows="13" placeholder="Message" name="message"
+            formControlName="message"
+            [ngClass]="(submitted && sendEmail.controls['message'].errors) ? 'is-invalid' : ''"></textarea>
+  
+          <div *ngIf="submitted && sendEmail.controls['message'].errors">
+            <div *ngIf="sendEmail.controls['message'].errors['required']" class="invalid-feedback d-block">
+              Please enter Message.
+            </div>
+          </div>
+        </div>
+      <br>
+      <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Send</button>
+      <input type="hidden">
+    </form>
+  </div>
+</div>
+<!-- Send Email Modal End -->

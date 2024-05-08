@@ -1,0 +1,60 @@
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSendEmail" aria-labelledby="offcanvasSendEmailLabel"
+  aria-modal="true" role="dialog">
+  <div class="offcanvas-header sub-drawer-head">
+    <h5 id="offcanvasSendEmailLabel" class="offcanvas-title">Send Email</h5>
+    <button type="button" (click)="onClose()" #closeModal class="btn-close text-reset" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+  </div>
+    <div class="offcanvas-body mx-0 flex-grow-0" style="text-align: left;">
+      <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" [formGroup]="sendEmail"
+        (ngSubmit)="onSubmit()">
+
+        <div class="mb-3 fv-plugins-icon-container">
+          <label class="form-label" for="title">Email</label>
+          <input type="text" class="form-control" id="title" placeholder="Enter Email" name="email"
+             formControlName="email"
+            [ngClass]="(submitted && sendEmail.controls['email'].errors) ? 'is-invalid' : ''">
+  
+          <div *ngIf="submitted && sendEmail.controls['email'].errors">
+            <div *ngIf="sendEmail.controls['email'].errors['required']" class="invalid-feedback d-block">
+              Please enter email.
+            </div>
+          </div>
+        </div>
+  
+        <div class="mb-3 fv-plugins-icon-container">
+          <label class="form-label" for="description">Subject</label>
+          <input type="text" class="form-control" id="description" placeholder="Enter Subject" name="subject"
+            formControlName="subject"
+            [ngClass]="(submitted && sendEmail.controls['subject'].errors) ? 'is-invalid' : ''" />
+  
+          <div *ngIf="submitted && sendEmail.controls['subject'].errors">
+            <div *ngIf="sendEmail.controls['subject'].errors['required']" class="invalid-feedback d-block">
+              Please enter Subject.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 fv-plugins-icon-container">
+            <label class="form-label" for="description">Message</label>
+            <textarea type="text" class="form-control" id="description" placeholder="Enter Message" name="message"
+              formControlName="message"
+              [ngClass]="(submitted && sendEmail.controls['message'].errors) ? 'is-invalid' : ''"></textarea>
+    
+            <div *ngIf="submitted && sendEmail.controls['message'].errors">
+              <div *ngIf="sendEmail.controls['message'].errors['required']" class="invalid-feedback d-block">
+                Please enter Message.
+              </div>
+            </div>
+          </div>
+        <br>
+        <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
+        <button type="reset" class="btn btn-label-secondary" (click)="onClose()"
+          data-bs-dismiss="offcanvas">Cancel</button>
+        <input type="hidden">
+      </form>
+    </div>
+  </div>
+  <!-- Add User Drawer End -->
+

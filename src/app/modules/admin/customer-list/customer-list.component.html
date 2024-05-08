@@ -1,0 +1,51 @@
+<div class="container-xxl flex-grow-1 container-p-y other-page-c">
+    <div class="card none-shadow">
+      <div class="card-header">
+        <h4 class="fw-bold mb-1"><i class="bi bi-arrow-left" style="cursor: pointer;" routerLink="/dashboard"></i>&nbsp;&nbsp; Customer List</h4>
+  
+        <hr />
+  
+        <div class="row g-4 mb-4">
+          <div
+            class="col-md-12 col-xl-12"
+            style="padding: 10px; border-radius: 10px"
+          >
+          <div class="card" style="padding: 20px; align-items: center;">
+            <table class="table table-border-bottom-2">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Name</th>
+                        <th style="width: 20%;">Company</th>
+                        <th style="width: 20%;">Email</th>
+                        <th style="width: 20%;">Phone Number</th>
+                        <th style="width: 10%;">Title</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of userlist">
+                        <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.name}}</td>
+                        <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.company}}</td>
+                        <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.email}}</td>
+                        <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.number}}</td>
+                        <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.title}}</td>
+                        <td>
+                          <div class="btn-group">
+                            <i class="bi bi-three-dots-vertical" style="cursor: pointer;" id="dropdownMenuButton" onclick="toggleDropdown(this)"></i>
+                            <ul class="dropdown-menu" id="dropdownMenu" style="display: none;">
+                                <li><a class="dropdown-item" style="cursor: pointer;">Add Tags</a></li>
+                                <li><a class="dropdown-item" style="cursor: pointer;">Delete</a></li>
+                            </ul>
+                          </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
