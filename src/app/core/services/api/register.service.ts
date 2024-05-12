@@ -41,7 +41,7 @@ export class RegisterService {
     return this.http.post(this.API_URL + '/Sms/send-multiple?Campaign_name=' + data.campaignname + "&message=" + data.message, data);
   }
 
-  getAllUsers(): Observable<CustomerlistModule[]>{
+  getAllUsers(): Observable<any>{
     return this.http.get<CustomerlistModule[]>(this.API_URL2 + 'UserProfile');
   }
 
@@ -49,4 +49,19 @@ export class RegisterService {
     return this.http.get<CustomerlistModule>(this.API_URL2 + 'UserProfile/' + id);
   }
 
+  deleteCampaign(): Observable<any>{
+    return this.http.delete(this.API_URL2 + 'Delete');
+  }
+
+  getAllCampaignList(): Observable<any>{
+    return this.http.get<SmsModule[]>(this.API_URL2 + 'SmsMarketingRate/AllCampaign');
+  }
+
+  getAllCampaignById(id: number): Observable<any>{
+    return this.http.get<SmsModule>(this.API_URL2 + 'SmsMarketingRate/CampaignByUserId/' + id);
+  }
+
+  getCampaignRateById(id: number): Observable<any>{
+    return this.http.get(this.API_URL2 + "SmsMarketingRate/CampaignRate/" + id);
+  }
 }

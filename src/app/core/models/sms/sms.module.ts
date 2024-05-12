@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class SmsModule {
+  id?: number;
   campaignname?: string;
   message?: string;
+  datetime?: string;
  }

@@ -29,6 +29,65 @@
             </div>
           </div>
         </div>
+
+        <h5 class="fw-bold mb-1">Placeholder</h5>
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-12 col-xl-12" style="padding: 10px; border-radius: 10px">
+            <div class="card mb-2" *ngFor="let item of campaignlist['data']" style="padding: 15px;">
+              <div class="row align-items-center">
+                  <div class="col-8">
+                      <div class="row align-items-center">
+                          <div class="col-auto">
+                              <i class='bx bx-message-alt-dots text-primary' style="font-size: 24px;"></i>
+                          </div>
+                          <div class="col">
+                              <label class="fw-bold mb-0">{{item.campaignName}}</label>
+                              <br>
+                              <label class="fw-bold">SMS:&nbsp;&nbsp;</label><label>{{item.message}}</label>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-4" style="text-align: end;">
+                      <label class="fw-bold"><i class="bi bi-calendar3 text-primary"></i> &nbsp;&nbsp; {{item.dateTime}} &nbsp;&nbsp; 
+                        <i id="toggleIcon" class='bi bi-plus-circle' style="cursor: pointer;" data-bs-toggle="collapse" 
+                        data-bs-target="#accordionContent" aria-expanded="false" aria-controls="accordionContent" (click)="getCampaignById(item.id)" onclick="toggleAccordion()"
+                        ></i></label>
+                  </div>
+              </div>
+              <div class="collapse" id="accordionContent">
+                  <!-- Content of accordion goes here -->
+                  <div class="card-body fw-bold">
+                      Event based performance
+
+                      <div class="container mt-4">
+                        <div class="row">
+                          <div class="col-3 d-flex align-items-end">
+                            <h3 class="mb-0 mr-1 text-primary">{{campaigndata.data.successRate}}%</h3>&nbsp;
+                            <h5 class="mb-0">Rate DSR</h5>
+                          </div>
+                          <div class="col-3 d-flex align-items-end">
+                            <h3 class="mb-0 mr-1 text-primary">{{campaigndata.data.failureRate}}%</h3>&nbsp;
+                            <h5 class="mb-0">Failure Rate</h5>
+                          </div>
+                          <div class="col-3 d-flex align-items-end">
+                            <h3 class="mb-0 mr-1 text-primary">{{campaigndata.data.responseRate}}%</h3>&nbsp;
+                            <h5 class="mb-0">Response Rate</h5>
+                          </div>
+                          <div class="col-3 d-flex align-items-end">
+                            <h3 class="mb-0 mr-1 text-primary">{{campaigndata.data.leadConversationRate}}%</h3>&nbsp;
+                            <h5 class="mb-0">Lead conversation Rate</h5>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
       </div>
       <!-- / Content -->
     <div class="content-backdrop fade"></div>

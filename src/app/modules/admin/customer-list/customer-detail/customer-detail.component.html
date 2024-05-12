@@ -10,13 +10,157 @@
             class="col-md-12 col-xl-12"
             style="padding: 10px; border-radius: 10px"
           >
-            <div class="card" style="padding: 20px; align-items: center;">
-                
-                
+            <div class="card" style="padding: 20px;">
+                <div class="row">
+                  <div class="col-md-8 fw-bold">
+                    <label>{{user.name}}</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="row">
+                      <div class="col-4">
+
+                      </div>
+                      <div class="col-3">
+                        <button class="btn" style="background: lightgray;">Refresh</button>
+                      </div>
+                      <div class="col-2">
+                        <button class="btn" style="background: lightgray;">Tag</button>
+                      </div>
+                      <div class="col-2">
+                        <button class="btn btn-danger">Delete</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <hr/>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Email</span>
+                        <span class="col-md-7 fw-bold me-2">{{ user.email }}</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Phone</span>
+                        <span class="col-md-7 fw-bold me-2">{{ user.number }}</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Title</span>
+                        <span class="col-md-7 fw-bold me-2">{{ user.title }}</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Tag</span>
+                        <span class="col-md-7 fw-bold me-2">Tag</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Company</span>
+                        <span class="col-md-7 fw-bold me-2">{{ user.company }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Industry</span>
+                        <span class="col-md-7 fw-bold me-2">Industry</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Company Revenue</span>
+                        <span class="col-md-7 fw-bold me-2">Company Revenue</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Company Size</span>
+                        <span class="col-md-7 fw-bold me-2">200</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="row">
+                        <span class="col-md-4">Address</span>
+                        <span class="col-md-7 fw-bold me-2">75 3rd Ave, New York, NY 10003, USA</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
+
+        <h5 class="fw-bold mb-1">Campaign name</h5>
+
+          <div class="row g-4 mb-4">
+            <div class="col-md-12 col-xl-12" style="padding: 10px; border-radius: 10px">
+              <div class="card mb-2" style="padding: 15px;">
+                <div class="row">
+                  <div class="col-8">
+                    <label class="fw-bold">Campaign name</label>
+                  </div>
+                  <div class="col-4" style="text-align: end;">
+                    <label class="fw-bold"><i class="bi bi-calendar3 text-primary"></i> &nbsp;&nbsp; 20 March 2024 | 09:00 PM &nbsp;&nbsp; 
+                      <i class="bi bi-plus-circle" style="cursor: pointer;" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasOpenChatbox"></i></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
       </div>
     </div>
   </div>
+
+  <!-- Upload data Modal start -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasOpenChatbox" aria-labelledby="offcanvasOpenChatboxLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasOpenChatboxLabel">Campaign name</h5>
+      <button type="button" class="btn-close text-reset" #scloseModal data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body mx-0 flex-grow-0" style="text-align: left;">
+    <!-- <div id="frame">
+      <div class="content">
+        <div class="messages" #scrollMe>
+          <ul>
+            <li [class]="msg.type" *ngFor="let msg of activeUser?.messages">
+              <img
+                [src]="
+                  msg.type === 'sent' ? activeUser.img : messageReceivedFrom.img
+                "
+                alt=""
+              />
+              <p>{{ msg?.message || '' }}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="message-input">
+          <div class="wrap">
+            <input
+              type="text"
+              #msgInput
+              placeholder="Write your message..."
+              (keyup.enter)="addNewMessage(msgInput)"
+            />
+            <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+            <button class="submit" (click)="addNewMessage(msgInput)">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
+<!-- Upload data Modal End -->
   

@@ -173,4 +173,10 @@ export class DashboardComponent implements OnInit {
     Marketing(){
       this.router.navigate(['/dashboard/marketing']);
     }
+
+    deleteCampaign(){
+      this.api.deleteCampaign().subscribe((res) => {
+        Swal.fire('Success', res.statusMessage, 'success');
+      });
+    }
 }

@@ -10,7 +10,7 @@ import { RegisterService } from 'src/app/core/services/api/register.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  userlist!: CustomerlistModule[];
+  userlist!: any;
 
   constructor(
     private api: RegisterService,
@@ -23,8 +23,8 @@ export class CustomerListComponent implements OnInit {
 
   GetUsers(): void {
     this.api.getAllUsers()
-    .subscribe(users => {
-      this.userlist = users;
+    .subscribe(res => {
+      this.userlist = res;
       console.log(this.userlist);
     });
   }

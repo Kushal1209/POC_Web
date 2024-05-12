@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of userlist">
+                    <tr *ngFor="let item of userlist['data']">
                         <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.name}}</td>
                         <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.company}}</td>
                         <td (click)="customerDetail(item.id)" style="cursor: pointer;">{{item.email}}</td>
